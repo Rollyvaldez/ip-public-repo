@@ -25,7 +25,12 @@ def home(request):
     # (*) este último, solo si se desarrolló el opcional de favoritos; caso contrario, será un listado vacío [].
     images = []
     favourite_list = []
-    return render(request, 'home.html', {'images': images, 'favourite_list': favourite_list} )
+    images,favourite_list = GetAllImagesAndFavouriteList(request) # 2 variables separadas por una coma a las que se le asigna la funcion anterior,
+                                                                  # ya que esta retorna ambas listas en una misma linea de codigo
+    return render(request, 'home.html', {'images': images, 'favourite_list': favourite_list} ) # La funcion render toma 3 parametros y retorna una respuesta http
+    # primero el objeto(request) a peticion del usuario, segundo la plantilla que se va a renderizar 'home.html' y
+    # por ultimo un contexto(diccionario) delimitado por unas llaves '{'images': images, 'favourite_list': favourite_list}' que marca las
+    # variables que estaran dentro de la plantilla en este caso las listas 'images' y 'favourite_list' con sus valores correspondientes
 
 
 # función utilizada en el buscador.
