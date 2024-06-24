@@ -32,9 +32,10 @@ def search(request):
     search_msg = request.POST.get('query', '')
 
     # si el usuario no ingresó texto alguno, debe refrescar la página; caso contrario, debe filtrar aquellas imágenes que posean el texto de búsqueda.
+    
     pass
 
-
+# mi funcion getallmagesandfavouritlist (request) tenemos dos listas vacías, la última esta relacionada con el itms de favoritos, se genera una variable imagen y se llama a la función service_nasa_image_gallery.getallimages(request) esta nos proporciona las imagy que sale de la función service nasa image
 # las siguientes funciones se utilizan para implementar la sección de favoritos: traer los favoritos de un usuario, guardarlos, eliminarlos y desloguearse de la app.
 @login_required
 def getAllFavouritesByUser(request):
