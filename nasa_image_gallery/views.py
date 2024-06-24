@@ -14,11 +14,10 @@ def index_page(request):
 def getAllImagesAndFavouriteList(request):
     images = []
     favourite_list = []
+    # me retorno todas las imágenes de la API
     images = services_nasa_image_gallery.getAllImages(request)
     # llamamos a la función que de aca sale las imágenes de favoritos 
     favourite_list = services_nasa_image_gallery.getAllFavouritesByUser(request)
-    # tenemos dos listas vacias la cual una son kas imágenes y otra lista de fav.
-    # 
 
     return images, favourite_list
 
